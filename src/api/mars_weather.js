@@ -14,14 +14,16 @@ let cacheTime;
 // auth
 const apiKeys = new Map();
 apiKeys.set("12345", true);
-
-console.log(apiKeys.has("12345"));
+// apiKeys.set("3333", true);
 
 router.get(
   "/",
   (req, res, next) => {
     const apiKey = req.get("X-API-KEY");
-    if (apiKeys.has(apiKey)) {
+    const key = Object.keys(req.query)[0];
+    const value = Object.values(req.query)[0];
+
+    if (apiKeys.has(apiKey) || apiKeys.has(value)) {
       next();
     } else {
       const error = new Error("Invalid API KEY");
