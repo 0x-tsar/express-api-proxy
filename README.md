@@ -1,7 +1,7 @@
 # Express API Starter.
 .
 Includes API Server utilities:
-...
+....
 * [morgan](https://www.npmjs.com/package/morgan)
   * HTTP request logger middleware for node.js
 * [helmet](https://www.npmjs.com/package/helmet)
